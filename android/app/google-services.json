@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "107628855891",
+    "firebase_url": "https://hichat-785b7.firebaseio.com",
+    "project_id": "hichat-785b7",
+    "storage_bucket": "hichat-785b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107628855891:android:5298c2d1d6f5c778d5bca6",
+        "android_client_info": {
+          "package_name": "com.example.abiolachat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "107628855891-51hql8tev4cff1a7lgle6k49abjapj61.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIFEoTls8-G_44h4wWZMRU9vNpalZbxUo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "107628855891-51hql8tev4cff1a7lgle6k49abjapj61.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
