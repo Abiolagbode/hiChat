@@ -9,6 +9,8 @@ hiChat Messenging app with flutter and Firebase.
     firebase_auth: ^0.16.1
     image_picker: ^0.6.7+2
     firebase_core: ^0.4.5
+    firebase_storage: ^3.1.6
+    firebase_messaging: ^6.0.16
 - Create a new project on your firebase console
 - add ios and android app from project overview.
 - download the generated google-service.json for android and add to android - app directory
@@ -18,6 +20,13 @@ hiChat Messenging app with flutter and Firebase.
 - Navigate to Database
 - CLick on Cloud Firestore
 - Create 2 new collections users and chat
+- on push notification - add the dependecy
+- Create a firebase cloud function 
+- Run this command 
+- sudo npm install -g firebase-tools
+- firebase login
+- firebase init
+- firebase deploy
 
 Thats all you need.
 You can contact me on Linkedin: https://www.linkedin.com/in/abiolagbode for further enquiry.

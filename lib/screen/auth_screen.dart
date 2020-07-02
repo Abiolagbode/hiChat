@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:abiolachat/widget/auth_form.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 /* created by Abiola Gbode
 repo -> https://github.com/abiolagbode
@@ -23,6 +26,7 @@ class _AuthScreenState extends State<AuthScreen> {
     String email,
     String username,
     String password,
+    File image,
     bool isLogin,
     BuildContext ctx,
   ) async {
@@ -42,12 +46,26 @@ class _AuthScreenState extends State<AuthScreen> {
           email: email,
           password: password,
         );
-       await Firestore.instance
+
+        //puting image to firebase
+        final ref= FirebaseStorage.instance
+            .ref()
+            .child("user_image")
+            .child(authResult.user.uid + ".jpg");
+
+            await ref.putFile(image).onComplete;
+
+          //getting url
+          final url = await ref.getDownloadURL();
+
+
+        await Firestore.instance
             .collection('users')
             .document(authResult.user.uid)
             .setData({
           'username': username,
           'email': email,
+          'image_url': url,
         });
       }
     } on PlatformException catch (err) {

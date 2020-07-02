@@ -1,5 +1,6 @@
 import 'package:abiolachat/widget/chat/messages.dart';
 import 'package:abiolachat/widget/chat/new_message.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -20,6 +21,15 @@ class _ChatScreenState extends State<ChatScreen> {
       .collection("chats/BWAwHpix7sLPPoroFGev/messages")
       .snapshots();
 
+      @override
+      void initState(){
+        super.initState();
+        final fbm = FirebaseMessaging();
+
+        fbm.subscribeToTopic("chat");
+        
+      }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +37,7 @@ class _ChatScreenState extends State<ChatScreen> {
         title: Text("HiChat"),
         actions: <Widget>[
           DropdownButton(
+            underline: Container(),
             icon: Icon(
               Icons.more_vert,
               color: Theme.of(context).primaryIconTheme.color,
